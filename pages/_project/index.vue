@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="block text-gray-700 text-sm" v-if="step === 4">
-        Please sign the message to verify that you're the owner of your wallet. We are about to make sure it holds the required tokens for your Discord validation.
+        Please sign the message to verify that you're the owner of your wallet. We are about to make sure it holds the Faviont Rings for your Discord validation.
         <br>
         <br>
         Review the message before signing and make sure that nothing else is requested except signature.
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="block text-gray-700 text-sm" v-if="step === 6">
-        Unfortunately your wallet doesn't have the tokens required for validation.
+        Unfortunately your wallet doesn't have Faviont Rings :(.
       </div>
       <div class="block text-gray-700 text-sm" v-if="step === 7">
         There is currently a problem communicating with the Discord API. Try again later.
@@ -74,16 +74,6 @@
       <div class="block text-gray-700 text-sm" v-if="step === 11">
         We're having trouble finding you on this Discord server. Make sure you've joined the server and verify your role again.
       </div>
-      <div class="block text-gray-700 text-sm mt-10" v-if="step > 2">
-        <h2 class="block text-gray-700 text-xl font-bold mb-1">What is NFT 4 Cause?</h2>
-        <div class="block text-gray-700 text-sm mb-5">
-        At <a class="hyperlink" href="http://www.nft4cause.app">NFT 4 Cause</a> we create socially relevant NFTs and <b>donate 80% of our proceeds to global nonprofits</b> chosen by our holders! Everything else funds the development of free tools like this to enhance the Solana community.
-        </div>
-        <h2 class="block text-gray-700 text-lg font-bold mb-1">Join the #CryptoForGood conversation</h2>
-        <div>
-        Connect with us <a href="https://www.twitter.com/NFT4Cause">@NFT4Cause</a> 
-        </div>
-      </div> 
   </div>
 </template>
 

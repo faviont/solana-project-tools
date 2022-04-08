@@ -1,45 +1,4 @@
 <template>
-  <header class="z-50 w-full shadow-lg bg-white">
-    <v-app-bar
-      color="#fcb69f"
-      dark
-      src="https://picsum.photos/1920/1080?random"
-      scroll-target="#scrolling"
-    >
-      <template v-slot:img="{ props }">
-        <v-img
-          v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
-        ></v-img>
-      </template>
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-      <span class="title text-no-wrap">{{ this.$config.project_name }} | Solana Tools</span>
-      <v-spacer></v-spacer>
-      <div>
-        <div class="flex overflow-hidden transition-height md:h-auto h-0">
-          <ul class="flex flex-col list-none md:flex-row">
-            <li v-for="route in routes" :key="route.href" class="nowrap py-1 text-right">
-              <a :href="route.href" class="px-3 navlink">
-                {{ route.label }}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </v-app-bar>
-    <v-navigation-drawer v-model="drawer" class="blue-grey darken-4" dark absolute temporary>
-      <v-list nav dense>
-        <v-list-item-group active-class="white--text text--accent-4">
-          <v-list-item v-for="route in mobileRoutes" :key="route.href" :href="route.href" link>
-            <v-list-item-icon>
-              <v-icon>{{ route.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>{{ route.label }}</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
-  </header>
 </template>
 
 <script>
@@ -48,23 +7,54 @@ export default {
     return { 
       drawer: false,
       routes: [ 
-        { href: "/manage", label: "Manage" },
-        { href: "/projects", label: "Leaderboard" },
-        { href: this.$config.upgrade_url, label: "Donate!" }
       ],
       mobileRoutes: [
-        { icon: "mdi-home", href: "/", label: "Home" },
-        { icon: "mdi-cog", href: "/manage", label: "Manage" },
-        { icon: "mdi-file-document", href: "https://github.com/qrtp/solana-project-tools/wiki", label: "Documentation" },
-        { icon: "mdi-table", href: "/projects", label: "Leaderboard" },
-        { icon: "mdi-information", href: this.$config.about_url, label: "About the team" },
-        { icon: "mdi-hand-coin", href: this.$config.upgrade_url, label: "Donate!" }
+        { icon: "mdi-home", href: "/", label: "Home" }
       ]
     };
   }
 };
 </script>
 <style>
+  .bg-white {
+        padding: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(141, 89, 255, 0.8);
+    box-shadow: rgb(141 89 255) 0px 0px 15px inset;
+    border-radius: 20px;
+  }
+  .text-gray-700{
+    color:rgba(255, 255, 255, 0.7) !important;
+  }
+  .theme--light.v-card {
+    background-color: #545454 !important;
+    color: rgb(255 255 255 / 87%) !important;
+}
+.theme--light.v-card > .v-card__text, .theme--light.v-card > .v-card__subtitle {
+    color: rgb(255 255 255 / 60%) !important;
+}
+.v-application .green--text.text--darken-1 {
+    color: white !important;
+    caret-color: white !important;
+}
+  .v-btn:not(.v-btn--round).v-size--default {
+   /* height: 36px; */
+    /* min-width: 64px; */
+    /* padding: 0 16px; */
+    /* width: 100%; */
+    /* height: 60px; */
+    /* margin-top: 10px; */
+    /* margin-bottom: 5px; */
+    background: linear-gradient(to right, rgb(147, 24, 128), rgb(142, 45, 226));
+    color: white !important;
+    /* font-size: 16px; */
+    /* font-weight: bold; */
+    border-radius: 99px;
+}
+  .v-application a {
+    text-decoration: underline;
+      color: white;
+  }
   .title {
     @apply text-white text-lg font-semibold
   }
@@ -82,5 +72,9 @@ export default {
   }
   .titleWidth{
   width: 400px !important;
+}
+.theme--light.v-application {
+    background: #FFFFFF;
+        background-color: #060826 !important;
 }
 </style>
